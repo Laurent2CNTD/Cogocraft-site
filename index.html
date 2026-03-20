@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CogoCraft — Infrastructure • Sécurité • Fabrication technique</title>
+<meta name="description" content="CogoCraft : infrastructure informatique, sécurité, accès distant, automatisation, impression 3D et moules silicone sur mesure." />
+<style>
+:root{
+  --bg:#0b0f14;
+  --panel:#0f1620;
+  --panel2:#0a1320;
+  --text:#e8eef6;
+  --muted:#a9b6c7;
+  --line:rgba(255,255,255,.08);
+  --accent:#2aa3ff;
+  --accent2:#6bd3ff;
+  --radius:18px;
+  --max:1120px;
+  --shadow:0 16px 40px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(42,163,255,.12), transparent 55%),
+    radial-gradient(700px 400px at 100% 0%, rgba(107,211,255,.08), transparent 55%),
+    var(--bg);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:20px}
+
+.hero{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.brand-dot{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 0 8px rgba(42,163,255,.10);
+}
+h1{
+  margin:0 0 8px;
+  font-size:clamp(32px,4vw,46px);
+  line-height:1.03;
+  color:var(--text);
+}
+.sub{
+  margin:0 0 10px;
+  color:var(--accent2);
+  font-weight:700;
+}
+.small{font-size:14px;color:var(--muted)}
+.hero p{margin:0}
+.contact-inline{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-width:260px;
+}
+.contact-pill{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.18);
+}
+.contact-pill strong{color:var(--text)}
+.contact-pill span{color:var(--accent2)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:16px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(15,22,32,.98), rgba(10,19,32,.98));
+  padding:14px;
+  box-shadow:var(--shadow);
+}
+.card-media{
+  width:100%;
+  height:150px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.06);
+  background:#07101b;
+  margin-bottom:12px;
+}
+.card-media svg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.card h2{
+  margin:0 0 10px;
+  font-size:15px;
+  color:var(--accent);
+}
+.stack{display:grid;gap:7px}
+.pill{
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+  background:#020817;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,.04);
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);
+  margin-top:7px;
+  flex:0 0 auto;
+}
+.sep{
+  border-top:1px solid var(--line);
+  margin:10px 0 12px;
+}
+.contact-box{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  background:linear-gradient(180deg, rgba(15,22,32,.98), rgba(10,19,32,.98));
+  box-shadow:var(--shadow);
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border-radius:12px;
+  background:#020817;
+  border:1px solid rgba(255,255,255,.04);
+}
+.contact-item strong{color:var(--accent2)}
+footer{
+  margin-top:24px;
+  padding:22px 0 28px;
+  color:var(--muted);
+  text-align:center;
+  font-size:13px;
+}
+@media (max-width:780px){
+  .contact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="brand">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <strong>CogoCraft</strong>
+        </div>
+        <h1>Infrastructure, sécurité et fabrication technique</h1>
+        <p class="sub">Solutions concrètes pour PME, artisans et professionnels</p>
+        <p class="small">Infrastructure informatique sécurisée, accès distant protégé, automatisation, impression 3D et moules silicone sur mesure.</p>
+      </div>
+
+      <div class="contact-inline">
+        <a class="contact-pill" href="tel:+33615614938">
+          <span>📞</span>
+          <div><strong>06 15 61 49 38</strong><br><span class="small">Appel direct</span></div>
+        </a>
+        <a class="contact-pill" href="mailto:lhaissag@gmail.com">
+          <span>✉</span>
+          <div><strong>lhaissag@gmail.com</strong><br><span class="small">Email direct</span></div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Infrastructure et serveurs">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#0a1c31"/>
+                <stop offset="1" stop-color="#102844"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g1)"/>
+            <rect x="70" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
+            <rect x="230" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
+            <rect x="390" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
+            <g fill="#2aa3ff">
+              <circle cx="105" cy="78" r="5"/><circle cx="125" cy="78" r="5"/><circle cx="145" cy="78" r="5"/>
+              <circle cx="265" cy="78" r="5"/><circle cx="285" cy="78" r="5"/><circle cx="305" cy="78" r="5"/>
+              <circle cx="425" cy="78" r="5"/><circle cx="445" cy="78" r="5"/><circle cx="465" cy="78" r="5"/>
+            </g>
+            <g stroke="#6bd3ff" stroke-width="2" opacity=".9">
+              <path d="M105 110 C 160 135, 160 175, 105 205"/>
+              <path d="M125 110 C 180 145, 180 170, 125 205"/>
+              <path d="M265 110 C 320 135, 320 175, 265 205"/>
+              <path d="M285 110 C 340 145, 340 170, 285 205"/>
+              <path d="M425 110 C 480 135, 480 175, 425 205"/>
+              <path d="M445 110 C 500 145, 500 170, 445 205"/>
+            </g>
+          </svg>
+        </div>
+        <h2>🖥️ Infrastructure &amp; Serveurs</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>Serveurs Proxmox / VM</div>
+          <div class="pill"><span class="dot"></span>NAS sécurisé</div>
+          <div class="pill"><span class="dot"></span>Architecture réseau</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Installation complète de serveurs pour PME, centralisation des données, virtualisation et architecture réseau claire.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sécurité informatique">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0" stop-color="#1f1a14"/>
+                <stop offset="1" stop-color="#3b2a1f"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g2)"/>
+            <rect x="340" y="60" width="150" height="170" rx="18" fill="#d8d0c8"/>
+            <rect x="355" y="78" width="120" height="120" rx="10" fill="#f0eae3"/>
+            <rect x="110" y="95" width="135" height="86" rx="12" fill="#9b643b"/>
+            <rect x="135" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
+            <rect x="165" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
+            <rect x="195" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
+            <path d="M245 110 L330 85 L345 140 L260 166 Z" fill="#f6efe8"/>
+            <circle cx="185" cy="80" r="18" fill="#7f4b27"/>
+            <path d="M185 98 C210 106, 225 116, 235 145" stroke="#7f4b27" stroke-width="26" stroke-linecap="round"/>
+            <g transform="translate(410,120)">
+              <path d="M45 0l36 16v25c0 28-18 53-36 59C27 94 9 69 9 41V16L45 0z" fill="#2aa3ff" opacity=".9"/>
+              <path d="M45 24a14 14 0 0 1 14 14v12H31V38a14 14 0 0 1 14-14z" fill="#08203a"/>
+              <rect x="29" y="46" width="32" height="26" rx="6" fill="#081420"/>
+            </g>
+          </svg>
+        </div>
+        <h2>🔐 Sécurité</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>VPN sécurisé</div>
+          <div class="pill"><span class="dot"></span>Sauvegardes automatiques</div>
+          <div class="pill"><span class="dot"></span>Protection des accès</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Protection des données, sécurisation des accès distants, réduction de l’exposition et mise en place de sauvegardes fiables.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Accès distant">
+            <defs>
+              <linearGradient id="g3" x1="0" x2="1">
+                <stop offset="0" stop-color="#08111d"/>
+                <stop offset="1" stop-color="#132946"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g3)"/>
+            <rect x="70" y="48" width="330" height="190" rx="16" fill="#10233a" stroke="#234868"/>
+            <rect x="90" y="68" width="290" height="150" rx="10" fill="#0b1726"/>
+            <path d="M90 170 L170 120 L230 155 L300 100 L380 130" fill="none" stroke="#2aa3ff" stroke-width="4"/>
+            <path d="M115 205 H355" stroke="#264765" stroke-width="2"/>
+            <path d="M150 80v140M210 80v140M270 80v140M330 80v140" stroke="#17304c" stroke-width="1"/>
+            <rect x="425" y="88" width="105" height="165" rx="16" fill="#d7e2ee"/>
+            <rect x="436" y="103" width="83" height="118" rx="10" fill="#eef6ff"/>
+            <circle cx="477" cy="235" r="6" fill="#8aa0b7"/>
+            <g transform="translate(445,128)">
+              <circle cx="32" cy="32" r="28" fill="#2aa3ff" opacity=".18"/>
+              <path d="M32 7a25 25 0 1 1 0 50a25 25 0 0 1 0-50zm0 8a17 17 0 1 0 0 34a17 17 0 0 0 0-34z" fill="#2aa3ff"/>
+              <path d="M32 20l6 8h-4v12h-4V28h-4l6-8zM32 44l-6-8h4V24h4v12h4l-6 8z" fill="#6bd3ff"/>
+            </g>
+          </svg>
+        </div>
+        <h2>🌐 Accès distant</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>Bureau distant</div>
+          <div class="pill"><span class="dot"></span>Accès fichiers</div>
+          <div class="pill"><span class="dot"></span>Multi-utilisateurs</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Travail à distance sécurisé, accès aux fichiers et aux outils de l’entreprise depuis n’importe où, sans exposition inutile.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automatisation et scripts">
+            <defs>
+              <linearGradient id="g4" x1="0" x2="1">
+                <stop offset="0" stop-color="#101826"/>
+                <stop offset="1" stop-color="#17324d"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g4)"/>
+            <g transform="rotate(-8 300 150)">
+              <text x="60" y="95" font-size="28" fill="#9fdcff" font-family="monospace">for server in fleet:</text>
+              <text x="90" y="135" font-size="24" fill="#9ef1b8" font-family="monospace">monitor(server)</text>
+              <text x="90" y="175" font-size="24" fill="#d7b3ff" font-family="monospace">if alert: notify()</text>
+              <text x="90" y="215" font-size="24" fill="#ffd89b" font-family="monospace">backup()</text>
+            </g>
+            <rect x="40" y="40" width="520" height="220" rx="18" fill="none" stroke="#1c4063"/>
+          </svg>
+        </div>
+        <h2>⚙️ Automatisation</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>Monitoring</div>
+          <div class="pill"><span class="dot"></span>Scripts</div>
+          <div class="pill"><span class="dot"></span>Analyse</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Automatisation des tâches répétitives, surveillance technique, alertes et scripts sur mesure pour gagner du temps et fiabiliser l’exploitation.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Impression 3D">
+            <defs>
+              <linearGradient id="g5" x1="0" x2="1">
+                <stop offset="0" stop-color="#0b1825"/>
+                <stop offset="1" stop-color="#17344f"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g5)"/>
+            <rect x="120" y="40" width="240" height="200" rx="18" fill="none" stroke="#31597a" stroke-width="6"/>
+            <rect x="170" y="55" width="140" height="20" rx="8" fill="#3f647f"/>
+            <rect x="230" y="75" width="20" height="42" fill="#8ab6d9"/>
+            <rect x="205" y="118" width="70" height="22" rx="8" fill="#2aa3ff"/>
+            <path d="M240 140l-8 18h16z" fill="#6bd3ff"/>
+            <rect x="150" y="185" width="180" height="20" rx="8" fill="#20384c"/>
+            <path d="M200 183h80l25 14h-130z" fill="#2aa3ff" opacity=".8"/>
+            <path d="M154 210h172" stroke="#1e5577" stroke-width="2"/>
+            <circle cx="386" cy="92" r="28" fill="#2aa3ff" opacity=".15"/>
+            <path d="M386 70l18 10v20l-18 10l-18-10V80z" fill="#6bd3ff"/>
+          </svg>
+        </div>
+        <h2>🧩 Impression 3D</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>Pièces sur mesure</div>
+          <div class="pill"><span class="dot"></span>Prototypage</div>
+          <div class="pill"><span class="dot"></span>Réparation</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Fabrication de pièces techniques, adaptation d’éléments existants, prototypage rapide et reproduction de pièces introuvables.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Moules silicone">
+            <defs>
+              <linearGradient id="g6" x1="0" x2="1">
+                <stop offset="0" stop-color="#171114"/>
+                <stop offset="1" stop-color="#382129"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#g6)"/>
+            <rect x="130" y="70" width="340" height="150" rx="24" fill="#4c2c37"/>
+            <rect x="150" y="88" width="300" height="114" rx="18" fill="#6b3b4b"/>
+            <rect x="185" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
+            <rect x="271" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
+            <rect x="357" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
+            <path d="M214 126c11 0 18 7 18 18c0 8-4 13-9 18c-4 4-7 8-9 16c-2-8-5-12-9-16c-5-5-9-10-9-18c0-11 7-18 18-18z" fill="#8a4e5f"/>
+            <circle cx="300" cy="145" r="18" fill="#8a4e5f"/>
+            <rect x="289" y="163" width="22" height="14" rx="4" fill="#8a4e5f"/>
+            <path d="M386 125c12 0 20 10 20 20c0 17-20 33-20 33s-20-16-20-33c0-10 8-20 20-20z" fill="#8a4e5f"/>
+          </svg>
+        </div>
+        <h2>🍫 Moules silicone</h2>
+        <div class="stack">
+          <div class="pill"><span class="dot"></span>Moules personnalisés</div>
+          <div class="pill"><span class="dot"></span>Finition lisse</div>
+          <div class="pill"><span class="dot"></span>Usage alimentaire</div>
+        </div>
+        <div class="sep"></div>
+        <p class="small">Création de moules sur mesure pour chocolats, pâtisserie et besoins de production spécifiques, avec rendu propre et répétable.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="contact-box">
+    <h2 style="margin:0 0 12px;color:var(--accent2);font-size:18px;">Contact</h2>
+    <div class="contact-grid">
+      <a class="contact-item" href="tel:+33615614938">
+        <span>📞</span>
+        <div>
+          <div class="small">Téléphone</div>
+          <strong>+33 6 15 61 49 38</strong>
+        </div>
+      </a>
+      <a class="contact-item" href="mailto:lhaissag@gmail.com">
+        <span>✉</span>
+        <div>
+          <div class="small">Email</div>
+          <strong>lhaissag@gmail.com</strong>
+        </div>
+      </a>
+    </div>
+    <p class="small" style="margin:14px 0 0;">Explique simplement ton besoin par mail ou téléphone. Réponse rapide.</p>
+  </section>
+
+  <footer>
+    © 2026 CogoCraft — Laurent Haissaguerre
+  </footer>
+
+</div>
+
+</body>
+</html>
