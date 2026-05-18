@@ -880,3 +880,21 @@ footer p { font-size: 0.8rem; color: var(--text3); }
   .page-hero { padding: 7rem 1.25rem 3.5rem; }
   .detail-section { padding: 3rem 1.25rem; }
 }
+
+/* ===========================
+   GALERIE GRANDE (pages service)
+   =========================== */
+.gallery-section { margin-bottom: 3rem; }
+.gallery-section h2 {
+  font-family: var(--font-head); font-size: 1.6rem;
+  font-weight: 800; margin-bottom: 1.5rem;
+}
+.gallery-lg {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 768px) {
+  .gallery-lg { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .gallery-lg { grid-template-columns: 1fr; }
+}
