@@ -1,468 +1,589 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>CogoCraft — Infrastructure • Sécurité • Fabrication technique</title>
-<meta name="description" content="CogoCraft : infrastructure informatique, sécurité, accès distant, automatisation, impression 3D et moules silicone sur mesure." />
-<style>
-:root{
-  --bg:#0b0f14;
-  --panel:#0f1620;
-  --panel2:#0a1320;
-  --text:#e8eef6;
-  --muted:#a9b6c7;
-  --line:rgba(255,255,255,.08);
-  --accent:#2aa3ff;
-  --accent2:#6bd3ff;
-  --radius:18px;
-  --max:1120px;
-  --shadow:0 16px 40px rgba(0,0,0,.28);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(900px 500px at 10% -10%, rgba(42,163,255,.12), transparent 55%),
-    radial-gradient(700px 400px at 100% 0%, rgba(107,211,255,.08), transparent 55%),
-    var(--bg);
-  color:var(--text);
-}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:auto;padding:20px}
-
-.hero{
-  border:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-  border-radius:var(--radius);
-  padding:26px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px;
-}
-.hero-top{
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:8px;
-}
-.brand-dot{
-  width:12px;height:12px;border-radius:999px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  box-shadow:0 0 0 8px rgba(42,163,255,.10);
-}
-h1{
-  margin:0 0 8px;
-  font-size:clamp(32px,4vw,46px);
-  line-height:1.03;
-  color:var(--text);
-}
-.sub{
-  margin:0 0 10px;
-  color:var(--accent2);
-  font-weight:700;
-}
-.small{font-size:14px;color:var(--muted)}
-.hero p{margin:0}
-.contact-inline{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  min-width:260px;
-}
-.contact-pill{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.18);
-}
-.contact-pill strong{color:var(--text)}
-.contact-pill span{color:var(--accent2)}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:16px;
-}
-.card{
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  background:linear-gradient(180deg, rgba(15,22,32,.98), rgba(10,19,32,.98));
-  padding:14px;
-  box-shadow:var(--shadow);
-}
-.card-media{
-  width:100%;
-  height:150px;
-  border-radius:14px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.06);
-  background:#07101b;
-  margin-bottom:12px;
-}
-.card-media svg{
-  display:block;
-  width:100%;
-  height:100%;
-}
-.card h2{
-  margin:0 0 10px;
-  font-size:15px;
-  color:var(--accent);
-}
-.stack{display:grid;gap:7px}
-.pill{
-  display:flex;
-  gap:9px;
-  align-items:flex-start;
-  background:#020817;
-  padding:8px 10px;
-  border-radius:10px;
-  font-size:14px;
-  border:1px solid rgba(255,255,255,.04);
-}
-.dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--accent);
-  margin-top:7px;
-  flex:0 0 auto;
-}
-.sep{
-  border-top:1px solid var(--line);
-  margin:10px 0 12px;
-}
-.contact-box{
-  margin-top:18px;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:20px;
-  background:linear-gradient(180deg, rgba(15,22,32,.98), rgba(10,19,32,.98));
-  box-shadow:var(--shadow);
-}
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-.contact-item{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px;
-  border-radius:12px;
-  background:#020817;
-  border:1px solid rgba(255,255,255,.04);
-}
-.contact-item strong{color:var(--accent2)}
-footer{
-  margin-top:24px;
-  padding:22px 0 28px;
-  color:var(--muted);
-  text-align:center;
-  font-size:13px;
-}
-@media (max-width:780px){
-  .contact-grid{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CogoCraft — Infrastructure IT, sécurité et vidéosurveillance pour professionnels et particuliers dans le Var (83). Installation, configuration, maintenance.">
+  <title>CogoCraft — Infrastructure · Sécurité · Vidéosurveillance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="wrap">
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">CC</span>
+        <span class="logo-text">CogoCraft</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#formules">Formules</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#contact" class="nav-cta">Devis gratuit</a></li>
+      </ul>
+      <button class="burger" aria-label="Menu" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <header class="hero">
-    <div class="hero-top">
-      <div>
-        <div class="brand">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <strong>CogoCraft</strong>
-        </div>
-        <h1>Infrastructure, sécurité et fabrication technique</h1>
-        <p class="sub">Solutions concrètes pour PME, artisans et professionnels</p>
-        <p class="small">Infrastructure informatique sécurisée, accès distant protégé, automatisation, impression 3D et moules silicone sur mesure.</p>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" class="mm-link">Services</a></li>
+      <li><a href="#formules" class="mm-link">Formules</a></li>
+      <li><a href="#realisations" class="mm-link">Réalisations</a></li>
+      <li><a href="#contact" class="mm-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-scanline"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Prestataire local — Cogolin, Var (83)
       </div>
-
-      <div class="contact-inline">
-        <a class="contact-pill" href="tel:+33615614938">
-          <span>📞</span>
-          <div><strong>06 15 61 49 38</strong><br><span class="small">Appel direct</span></div>
-        </a>
-        <a class="contact-pill" href="mailto:lhaissag@gmail.com">
-          <span>✉</span>
-          <div><strong>lhaissag@gmail.com</strong><br><span class="small">Email direct</span></div>
-        </a>
+      <h1>
+        <span class="h1-line">Sécurisez.</span>
+        <span class="h1-line accent">Connectez.</span>
+        <span class="h1-line">Maîtrisez.</span>
+      </h1>
+      <p class="hero-sub">
+        Infrastructure IT, vidéosurveillance et contrôle d'accès pour PME, commerces et particuliers. Installation soignée, maintenance mensuelle, interlocuteur unique.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Demander un devis gratuit</a>
+        <a href="#services" class="btn-ghost">Découvrir les services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">Hikvision</span>
+          <span class="stat-label">& Dahua</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">Milestone</span>
+          <span class="stat-label">XProtect VMS</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">2N</span>
+          <span class="stat-label">Contrôle d'accès</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">Var</span>
+          <span class="stat-label">& environs</span>
+        </div>
       </div>
     </div>
-  </header>
+    <div class="hero-scroll-hint">
+      <span>Défiler</span>
+      <svg width="16" height="24" viewBox="0 0 16 24"><rect x="6" y="2" width="4" height="4" rx="2" fill="currentColor" opacity="0.6"/><line x1="8" y1="8" x2="8" y2="22" stroke="currentColor" stroke-width="1.5"/><polyline points="4,18 8,22 12,18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+    </div>
+  </section>
 
-  <section>
-    <div class="grid">
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">— Ce que je fais</span>
+        <h2>Services & Expertises</h2>
+      </div>
+      <div class="services-grid">
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Infrastructure et serveurs">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#0a1c31"/>
-                <stop offset="1" stop-color="#102844"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g1)"/>
-            <rect x="70" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
-            <rect x="230" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
-            <rect x="390" y="45" width="140" height="210" rx="14" fill="#13263d" stroke="#24476d"/>
-            <g fill="#2aa3ff">
-              <circle cx="105" cy="78" r="5"/><circle cx="125" cy="78" r="5"/><circle cx="145" cy="78" r="5"/>
-              <circle cx="265" cy="78" r="5"/><circle cx="285" cy="78" r="5"/><circle cx="305" cy="78" r="5"/>
-              <circle cx="425" cy="78" r="5"/><circle cx="445" cy="78" r="5"/><circle cx="465" cy="78" r="5"/>
-            </g>
-            <g stroke="#6bd3ff" stroke-width="2" opacity=".9">
-              <path d="M105 110 C 160 135, 160 175, 105 205"/>
-              <path d="M125 110 C 180 145, 180 170, 125 205"/>
-              <path d="M265 110 C 320 135, 320 175, 265 205"/>
-              <path d="M285 110 C 340 145, 340 170, 285 205"/>
-              <path d="M425 110 C 480 135, 480 175, 425 205"/>
-              <path d="M445 110 C 500 145, 500 170, 445 205"/>
-            </g>
-          </svg>
+        <div class="service-card featured" data-index="01">
+          <a href="videosurveillance.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="24" cy="20" r="3" fill="currentColor" opacity="0.4"/>
+              <path d="M38 10l4-4M10 10L6 6M44 26h-4M8 26H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-num">01</div>
+          <h3>Vidéosurveillance</h3>
+          <p>Caméras Hikvision & Dahua, enregistreur NVR, accès smartphone en temps réel. Installation soignée, câblage propre, configuration complète.</p>
+          <ul class="service-tags">
+            <li>Hikvision ColorVu</li>
+            <li>Dahua Full-color</li>
+            <li>Accès distant</li>
+            <li>Détection mouvement</li>
+          </ul>
         </div>
-        <h2>
-          <a href="infrastructure.html" style="color:inherit; text-decoration:none;">
-    🖥️ Infrastructure &amp; Serveurs
-          </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>Serveurs Proxmox / VM</div>
-          <div class="pill"><span class="dot"></span>NAS sécurisé</div>
-          <div class="pill"><span class="dot"></span>Architecture réseau</div>
-        </div>
-        <div class="sep"></div>
-        <p class="small">Installation complète de serveurs pour PME, centralisation des données, virtualisation et architecture réseau claire.</p>
-      </article>
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sécurité informatique">
-            <defs>
-              <linearGradient id="g2" x1="0" x2="1">
-                <stop offset="0" stop-color="#1f1a14"/>
-                <stop offset="1" stop-color="#3b2a1f"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g2)"/>
-            <rect x="340" y="60" width="150" height="170" rx="18" fill="#d8d0c8"/>
-            <rect x="355" y="78" width="120" height="120" rx="10" fill="#f0eae3"/>
-            <rect x="110" y="95" width="135" height="86" rx="12" fill="#9b643b"/>
-            <rect x="135" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
-            <rect x="165" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
-            <rect x="195" y="112" width="22" height="55" rx="6" fill="#6f4221"/>
-            <path d="M245 110 L330 85 L345 140 L260 166 Z" fill="#f6efe8"/>
-            <circle cx="185" cy="80" r="18" fill="#7f4b27"/>
-            <path d="M185 98 C210 106, 225 116, 235 145" stroke="#7f4b27" stroke-width="26" stroke-linecap="round"/>
-            <g transform="translate(410,120)">
-              <path d="M45 0l36 16v25c0 28-18 53-36 59C27 94 9 69 9 41V16L45 0z" fill="#2aa3ff" opacity=".9"/>
-              <path d="M45 24a14 14 0 0 1 14 14v12H31V38a14 14 0 0 1 14-14z" fill="#08203a"/>
-              <rect x="29" y="46" width="32" height="26" rx="6" fill="#081420"/>
-            </g>
-          </svg>
+        <div class="service-card" data-index="02">
+          <a href="acces.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="16" width="32" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 16V12a8 8 0 0116 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="24" cy="28" r="3" fill="currentColor" opacity="0.5"/>
+              <path d="M24 31v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-num">02</div>
+          <h3>Contrôle d'accès</h3>
+          <p>Interphones IP et visiphones 2N, gestion par badges ou application. Intégration dans Milestone XProtect pour une supervision centralisée.</p>
+          <ul class="service-tags">
+            <li>2N Helios IP</li>
+            <li>Badges RFID</li>
+            <li>Intégration VMS</li>
+          </ul>
         </div>
-        <h2>
-          <a href="securite.html" style="color:inherit; text-decoration:none;">
-    🔐 Sécurité
-          </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>VPN sécurisé</div>
-          <div class="pill"><span class="dot"></span>Sauvegardes automatiques</div>
-          <div class="pill"><span class="dot"></span>Protection des accès</div>
-        </div>
-        <div class="sep"></div>
-        <p class="small">Protection des données, sécurisation des accès distants, réduction de l’exposition et mise en place de sauvegardes fiables.</p>
-      </article>
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Accès distant">
-            <defs>
-              <linearGradient id="g3" x1="0" x2="1">
-                <stop offset="0" stop-color="#08111d"/>
-                <stop offset="1" stop-color="#132946"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g3)"/>
-            <rect x="70" y="48" width="330" height="190" rx="16" fill="#10233a" stroke="#234868"/>
-            <rect x="90" y="68" width="290" height="150" rx="10" fill="#0b1726"/>
-            <path d="M90 170 L170 120 L230 155 L300 100 L380 130" fill="none" stroke="#2aa3ff" stroke-width="4"/>
-            <path d="M115 205 H355" stroke="#264765" stroke-width="2"/>
-            <path d="M150 80v140M210 80v140M270 80v140M330 80v140" stroke="#17304c" stroke-width="1"/>
-            <rect x="425" y="88" width="105" height="165" rx="16" fill="#d7e2ee"/>
-            <rect x="436" y="103" width="83" height="118" rx="10" fill="#eef6ff"/>
-            <circle cx="477" cy="235" r="6" fill="#8aa0b7"/>
-            <g transform="translate(445,128)">
-              <circle cx="32" cy="32" r="28" fill="#2aa3ff" opacity=".18"/>
-              <path d="M32 7a25 25 0 1 1 0 50a25 25 0 0 1 0-50zm0 8a17 17 0 1 0 0 34a17 17 0 0 0 0-34z" fill="#2aa3ff"/>
-              <path d="M32 20l6 8h-4v12h-4V28h-4l6-8zM32 44l-6-8h4V24h4v12h4l-6 8z" fill="#6bd3ff"/>
-            </g>
-          </svg>
+        <div class="service-card" data-index="03">
+          <a href="infrastructure.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="36" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 38h16M24 34v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="12" y="16" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+              <rect x="24" y="16" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+              <path d="M12 26h24" stroke="currentColor" stroke-width="1.2" opacity="0.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-num">03</div>
+          <h3>Infrastructure IT</h3>
+          <p>Réseau VLAN dédié, serveurs, sauvegardes automatisées, accès VPN sécurisé. Administration système Linux, Proxmox, WireGuard.</p>
+          <ul class="service-tags">
+            <li>VLAN dédié</li>
+            <li>VPN WireGuard</li>
+            <li>Proxmox</li>
+            <li>Sauvegardes</li>
+          </ul>
         </div>
-        <h2>
-          <a href="acces.html" style="color:inherit; text-decoration:none;">
-    🌐 Accès distant
-          </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>Bureau distant</div>
-          <div class="pill"><span class="dot"></span>Accès fichiers</div>
-          <div class="pill"><span class="dot"></span>Multi-utilisateurs</div>
-        </div>
-        <div class="sep"></div>
-        <p class="small">Travail à distance sécurisé, accès aux fichiers et aux outils de l’entreprise depuis n’importe où, sans exposition inutile.</p>
-      </article>
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automatisation et scripts">
-            <defs>
-              <linearGradient id="g4" x1="0" x2="1">
-                <stop offset="0" stop-color="#101826"/>
-                <stop offset="1" stop-color="#17324d"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g4)"/>
-            <g transform="rotate(-8 300 150)">
-              <text x="60" y="95" font-size="28" fill="#9fdcff" font-family="monospace">for server in fleet:</text>
-              <text x="90" y="135" font-size="24" fill="#9ef1b8" font-family="monospace">monitor(server)</text>
-              <text x="90" y="175" font-size="24" fill="#d7b3ff" font-family="monospace">if alert: notify()</text>
-              <text x="90" y="215" font-size="24" fill="#ffd89b" font-family="monospace">backup()</text>
-            </g>
-            <rect x="40" y="40" width="520" height="220" rx="18" fill="none" stroke="#1c4063"/>
-          </svg>
+        <div class="service-card" data-index="04">
+          <a href="videosurveillance.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 36V20l16-12 16 12v16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="18" y="28" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="36" cy="12" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M33 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="service-num">04</div>
+          <h3>Milestone XProtect</h3>
+          <p>VMS professionnel avec plans dynamiques, scénarios d'alarme, journal automatisé. Notifications Node-RED en temps réel. Intégration 3D du site.</p>
+          <ul class="service-tags">
+            <li>Plans dynamiques</li>
+            <li>Scénarios d'alarme</li>
+            <li>Node-RED</li>
+            <li>Modélisation 3D</li>
+          </ul>
         </div>
-        <h2>
-           <a href="automatisation.html" style="color:inherit; text-decoration:none;">
-    ⚙️ Automatisation
-           </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>Monitoring</div>
-          <div class="pill"><span class="dot"></span>Scripts</div>
-          <div class="pill"><span class="dot"></span>Analyse</div>
-        </div>
-        <div class="sep"></div>
-        <p class="small">Automatisation des tâches répétitives, surveillance technique, alertes et scripts sur mesure pour gagner du temps et fiabiliser l’exploitation.</p>
-      </article>
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Impression 3D">
-            <defs>
-              <linearGradient id="g5" x1="0" x2="1">
-                <stop offset="0" stop-color="#0b1825"/>
-                <stop offset="1" stop-color="#17344f"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g5)"/>
-            <rect x="120" y="40" width="240" height="200" rx="18" fill="none" stroke="#31597a" stroke-width="6"/>
-            <rect x="170" y="55" width="140" height="20" rx="8" fill="#3f647f"/>
-            <rect x="230" y="75" width="20" height="42" fill="#8ab6d9"/>
-            <rect x="205" y="118" width="70" height="22" rx="8" fill="#2aa3ff"/>
-            <path d="M240 140l-8 18h16z" fill="#6bd3ff"/>
-            <rect x="150" y="185" width="180" height="20" rx="8" fill="#20384c"/>
-            <path d="M200 183h80l25 14h-130z" fill="#2aa3ff" opacity=".8"/>
-            <path d="M154 210h172" stroke="#1e5577" stroke-width="2"/>
-            <circle cx="386" cy="92" r="28" fill="#2aa3ff" opacity=".15"/>
-            <path d="M386 70l18 10v20l-18 10l-18-10V80z" fill="#6bd3ff"/>
-          </svg>
+        <div class="service-card" data-index="05">
+          <a href="impression3d.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L6 18v24h12V30h12v12h12V18L24 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="1.3" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="service-num">05</div>
+          <h3>Photogrammétrie drone</h3>
+          <p>Relevé aérien avec Mavic 3E, reconstruction 3D via Metashape. Maquette numérique précise pour intégration Milestone ou livrable client.</p>
+          <ul class="service-tags">
+            <li>Mavic 3E</li>
+            <li>Metashape</li>
+            <li>Maquette 3D</li>
+          </ul>
         </div>
-        <h2>
-          <a href="impression3d.html" style="color:inherit; text-decoration:none;">
-    🧩 Impression 3D
-          </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>Pièces sur mesure</div>
-          <div class="pill"><span class="dot"></span>Prototypage</div>
-          <div class="pill"><span class="dot"></span>Réparation</div>
-        </div>
-        <div class="sep"></div>
-        <p class="small">Fabrication de pièces techniques, adaptation d’éléments existants, prototypage rapide et reproduction de pièces introuvables.</p>
-      </article>
 
-      <article class="card">
-        <div class="card-media">
-          <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Moules silicone">
-            <defs>
-              <linearGradient id="g6" x1="0" x2="1">
-                <stop offset="0" stop-color="#171114"/>
-                <stop offset="1" stop-color="#382129"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="300" fill="url(#g6)"/>
-            <rect x="130" y="70" width="340" height="150" rx="24" fill="#4c2c37"/>
-            <rect x="150" y="88" width="300" height="114" rx="18" fill="#6b3b4b"/>
-            <rect x="185" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
-            <rect x="271" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
-            <rect x="357" y="110" width="58" height="70" rx="12" fill="#f0c7d2"/>
-            <path d="M214 126c11 0 18 7 18 18c0 8-4 13-9 18c-4 4-7 8-9 16c-2-8-5-12-9-16c-5-5-9-10-9-18c0-11 7-18 18-18z" fill="#8a4e5f"/>
-            <circle cx="300" cy="145" r="18" fill="#8a4e5f"/>
-            <rect x="289" y="163" width="22" height="14" rx="4" fill="#8a4e5f"/>
-            <path d="M386 125c12 0 20 10 20 20c0 17-20 33-20 33s-20-16-20-33c0-10 8-20 20-20z" fill="#8a4e5f"/>
-          </svg>
+        <div class="service-card" data-index="06">
+          <a href="automatisation.html" class="service-link-cover"></a>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="36" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="36" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M16 12h16M14 15l8 18M34 15l-8 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-num">06</div>
+          <h3>Automatismes & Alertes</h3>
+          <p>Orchestration Node-RED, notifications multi-canaux, scripts de supervision. Monitoring proactif avec alertes personnalisées selon vos scénarios métier.</p>
+          <ul class="service-tags">
+            <li>Node-RED</li>
+            <li>Alertes temps réel</li>
+            <li>Supervision</li>
+          </ul>
         </div>
-        <h2>
-          <a href="moules.html" style="color:inherit; text-decoration:none;">
-    🍫 Moules silicone
-          </a>
-        </h2>
-        <div class="stack">
-          <div class="pill"><span class="dot"></span>Moules personnalisés</div>
-          <div class="pill"><span class="dot"></span>Finition lisse</div>
-          <div class="pill"><span class="dot"></span>Usage alimentaire</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULES -->
+  <section id="formules">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">— Tarifs indicatifs HT</span>
+        <h2>Formules & Maintenance</h2>
+        <p class="section-desc">Devis personnalisé après visite ou échange. Le câblage encastré est réalisé par un électricien partenaire.</p>
+      </div>
+
+      <div class="formules-tabs">
+        <button class="tab-btn active" data-tab="particuliers">Particuliers</button>
+        <button class="tab-btn" data-tab="pme">PME & Commerces</button>
+        <button class="tab-btn" data-tab="residences">Résidences</button>
+      </div>
+
+      <!-- PARTICULIERS -->
+      <div class="tab-content active" id="tab-particuliers">
+        <div class="formules-grid">
+          <div class="formule-card">
+            <div class="formule-header">
+              <span class="formule-label">Essentiel</span>
+              <div class="formule-price">
+                <span class="price-from">à partir de</span>
+                <span class="price-val">490 €</span>
+              </div>
+            </div>
+            <ul class="formule-items">
+              <li>2 caméras Hikvision/Dahua extérieures</li>
+              <li>Enregistreur NVR 4 voies + disque 1 To</li>
+              <li>Installation + câblage apparent</li>
+              <li>Configuration accès smartphone</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">19 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un devis</a>
+          </div>
+
+          <div class="formule-card recommended">
+            <div class="formule-badge">Recommandée</div>
+            <div class="formule-header">
+              <span class="formule-label">Confort</span>
+              <div class="formule-price">
+                <span class="price-from">à partir de</span>
+                <span class="price-val">890 €</span>
+              </div>
+            </div>
+            <ul class="formule-items">
+              <li>4 caméras + NVR 8 voies + disque 2 To</li>
+              <li>Accès multi-utilisateurs</li>
+              <li>1 intervention sur site/an incluse</li>
+              <li>Rappel prioritaire sous 4h</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">29 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un devis</a>
+          </div>
+
+          <div class="formule-card">
+            <div class="formule-header">
+              <span class="formule-label">Client équipé</span>
+              <div class="formule-price">
+                <span class="price-from">à partir de</span>
+                <span class="price-val">250 €</span>
+              </div>
+            </div>
+            <ul class="formule-items">
+              <li>Pose + configuration (matériel client)</li>
+              <li>Configuration complète + accès distant</li>
+              <li>Formation basique incluse</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">19 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un devis</a>
+          </div>
         </div>
-        <div class="sep"></div>
-        <p class="small">Création de moules sur mesure pour chocolats, pâtisserie et besoins de production spécifiques, avec rendu propre et répétable.</p>
-      </article>
+      </div>
+
+      <!-- PME -->
+      <div class="tab-content" id="tab-pme">
+        <div class="formules-grid">
+          <div class="formule-card">
+            <div class="formule-header">
+              <span class="formule-label">Sécurité PME</span>
+              <div class="formule-price">
+                <span class="price-from">à partir de</span>
+                <span class="price-val">1 200 €</span>
+              </div>
+            </div>
+            <ul class="formule-items">
+              <li>4 à 6 caméras selon surface</li>
+              <li>NVR professionnel + stockage adapté</li>
+              <li>1 contrôle d'accès 2N entrée principale</li>
+              <li>Réseau VLAN dédié</li>
+              <li>2 interventions/an incluses</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">49 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un devis</a>
+          </div>
+
+          <div class="formule-card recommended">
+            <div class="formule-badge">Complète</div>
+            <div class="formule-header">
+              <span class="formule-label">Sécurité PME+</span>
+              <div class="formule-price">
+                <span class="price-from">à partir de</span>
+                <span class="price-val">2 200 €</span>
+              </div>
+            </div>
+            <ul class="formule-items">
+              <li>Caméras étendues + 2 points d'accès 2N</li>
+              <li>Serveur NVR dédié</li>
+              <li>Monitoring centralisé</li>
+              <li>Astreinte soirs et week-end</li>
+              <li>Interventions illimitées incluses</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">79 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉSIDENCES -->
+      <div class="tab-content" id="tab-residences">
+        <div class="formules-grid centered">
+          <div class="formule-card wide">
+            <div class="formule-header">
+              <span class="formule-label">Résidence sécurisée</span>
+              <div class="formule-price">
+                <span class="price-from">sur</span>
+                <span class="price-val">devis</span>
+              </div>
+            </div>
+            <ul class="formule-items two-col">
+              <li>Caméras parties communes (hall, parking)</li>
+              <li>Visiophone 2N avec gestion résidents</li>
+              <li>NVR centralisé + accès syndic</li>
+              <li>Interlocuteur unique syndic/gestionnaire</li>
+              <li>Rapport trimestriel</li>
+              <li>Intervention sous 24h en semaine</li>
+            </ul>
+            <div class="formule-maintenance">
+              <span class="maint-label">Maintenance</span>
+              <span class="maint-price">à partir de 59 €/mois</span>
+            </div>
+            <a href="#contact" class="btn-formule">Demander un audit gratuit</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTIONS -->
+      <div class="options-block">
+        <h3>Options à la carte</h3>
+        <div class="options-grid">
+          <div class="option-group">
+            <span class="option-group-label">Confort</span>
+            <ul>
+              <li>Interphone / contrôle d'accès 2N</li>
+              <li>Cloud de sauvegarde vidéo</li>
+              <li>Intégration smartphone avancée</li>
+            </ul>
+          </div>
+          <div class="option-group">
+            <span class="option-group-label">Pro</span>
+            <ul>
+              <li>Milestone XProtect — VMS professionnel</li>
+              <li>Map dynamique du site en temps réel</li>
+              <li>Automatismes Node-RED</li>
+              <li>Intégration 2N ↔ Milestone</li>
+            </ul>
+          </div>
+          <div class="option-group">
+            <span class="option-group-label">Sur mesure</span>
+            <ul>
+              <li>Modélisation 3D du site</li>
+              <li>Relevé drone + maquette 3D</li>
+              <li>Scénarios d'alarme complexes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
 
-  <section class="contact-box">
-    <h2 style="margin:0 0 12px;color:var(--accent2);font-size:18px;">Contact</h2>
-    <div class="contact-grid">
-      <a class="contact-item" href="tel:+33615614938">
-        <span>📞</span>
-        <div>
-          <div class="small">Téléphone</div>
-          <strong>+33 6 15 61 49 38</strong>
+  <!-- RÉALISATIONS -->
+  <section id="realisations">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">— Photos de chantier</span>
+        <h2>Réalisations</h2>
+        <p class="section-desc">Installations réelles réalisées par CogoCraft dans le Var.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-src="assets/images/chantier1.jpg">
+          <img src="assets/images/chantier1_thumb.jpg" alt="Chantier vidéosurveillance CogoCraft" loading="lazy">
+          <div class="gallery-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
         </div>
-      </a>
-      <a class="contact-item" href="mailto:lhaissag@gmail.com">
-        <span>✉</span>
-        <div>
-          <div class="small">Email</div>
-          <strong>lhaissag@gmail.com</strong>
+        <div class="gallery-item" data-src="assets/images/chantier2.jpg">
+          <img src="assets/images/chantier2_thumb.jpg" alt="Installation caméras CogoCraft" loading="lazy">
+          <div class="gallery-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
         </div>
-      </a>
+        <div class="gallery-item" data-src="assets/images/hikvision.jpg">
+          <img src="assets/images/hikvision_thumb.jpg" alt="Interface Hikvision vue en direct" loading="lazy">
+          <div class="gallery-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="small" style="margin:14px 0 0;">Expliquez simplement votre besoin par mail ou téléphone. Réponse rapide.</p>
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lb-close" id="lbClose">✕</button>
+      <img src="" alt="" id="lbImg">
+    </div>
   </section>
 
+  <!-- POURQUOI -->
+  <section id="why">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div class="why-text">
+          <span class="section-tag">— Pourquoi CogoCraft</span>
+          <h2>Prestataire local,<br>technicien unique</h2>
+          <p>Pas de sous-traitance, pas de call-center. Vous avez un interlocuteur unique qui connaît votre installation de A à Z — et qui répond au téléphone.</p>
+          <p>Chaque installation est documentée. Chaque configuration est sauvegardée. Si quelque chose cloche, je sais exactement quoi regarder.</p>
+          <a href="#contact" class="btn-primary">Prendre contact</a>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <span class="why-icon">◈</span>
+            <div>
+              <strong>Audit gratuit sur place</strong>
+              <p>Je viens voir le site avant de proposer quoi que ce soit. Pas de devis à l'aveugle.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="why-icon">◈</span>
+            <div>
+              <strong>Matériel professionnel</strong>
+              <p>Hikvision, Dahua, 2N, Milestone — des marques qui tiennent dans le temps, pas du bas de gamme.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="why-icon">◈</span>
+            <div>
+              <strong>Maintenance mensuelle sans surprise</strong>
+              <p>Vérification à distance, support téléphonique, interventions incluses selon formule.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="why-icon">◈</span>
+            <div>
+              <strong>Expertise avancée disponible</strong>
+              <p>Drone, modélisation 3D, VMS Milestone, Node-RED — pour les projets qui nécessitent plus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">— Me contacter</span>
+          <h2>Devis gratuit,<br>sans engagement</h2>
+          <p>Je réponds sous 24h. Pour les urgences techniques, appelez directement.</p>
+          <div class="contact-details">
+            <a href="tel:+33615614938" class="contact-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.63a16 16 0 006.29 6.29l1.15-1.15a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+              06 15 61 49 38
+            </a>
+            <a href="mailto:contact@cogocraft.com" class="contact-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contact@cogocraft.com
+            </a>
+            <div class="contact-line no-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Cogolin · Var (83) — déplacements Var & PACA
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" action="mailto:contact@cogocraft.com" method="GET">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom / Société</label>
+              <input type="text" id="nom" name="nom" placeholder="Laurent Dupont" required>
+            </div>
+            <div class="form-group">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
+          </div>
+          <div class="form-group">
+            <label for="besoin">Votre besoin</label>
+            <select id="besoin" name="besoin">
+              <option value="">— Sélectionner —</option>
+              <option>Vidéosurveillance particulier</option>
+              <option>Vidéosurveillance PME/commerce</option>
+              <option>Contrôle d'accès</option>
+              <option>Infrastructure IT / réseau</option>
+              <option>Milestone XProtect</option>
+              <option>Photogrammétrie drone</option>
+              <option>Autre / combiné</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="body" rows="4" placeholder="Décrivez votre projet, le nombre de points à surveiller, le type de locaux..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Envoyer la demande</button>
+          <p class="form-note">Réponse sous 24h. Devis gratuit après échange ou visite.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2026 CogoCraft — Laurent Haissaguerre
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">CC</span>
+        <span>CogoCraft</span>
+      </div>
+      <p>Infrastructure · Sécurité · Vidéosurveillance · Fabrication — Cogolin, Var (83)</p>
+      <div class="footer-links">
+        <a href="videosurveillance.html">Vidéosurveillance</a>
+        <a href="acces.html">Contrôle d'accès</a>
+        <a href="infrastructure.html">Infrastructure IT</a>
+        <a href="automatisation.html">Automatisation</a>
+        <a href="impression3d.html">Impression 3D</a>
+        <a href="moules.html">Moules silicone</a>
+      </div>
+      <p class="footer-legal">© 2025 CogoCraft — Laurent Haissaguerre · <a href="mailto:contact@cogocraft.com">contact@cogocraft.com</a> · <a href="tel:+33615614938">06 15 61 49 38</a></p>
+    </div>
   </footer>
 
-</div>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
