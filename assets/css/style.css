@@ -898,3 +898,13 @@ footer p { font-size: 0.8rem; color: var(--text3); }
 @media (max-width: 480px) {
   .gallery-lg { grid-template-columns: 1fr; }
 }
+
+/* Mention option câblage */
+.formule-option {
+  color: var(--clr-muted, #888) !important;
+  font-size: 0.82rem !important;
+  font-style: italic;
+  border-top: 1px dashed rgba(255,255,255,0.1) !important;
+  padding-top: 0.5rem !important;
+  margin-top: 0.25rem !important;
+}
