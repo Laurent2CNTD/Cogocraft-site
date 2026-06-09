@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="canonical" href="https://cogocraft.com/">
+  <!-- CSP via meta (headers HTTP non disponibles sur GitHub Pages) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self';">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cogocraft.com/">
@@ -593,10 +595,12 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" id="contactForm" action="contact.php" method="POST">
-          <!-- Honeypot anti-spam -->
+        <!-- Formspree : créer un compte sur formspree.io et remplacer YOUR_FORM_ID -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Demande de devis — CogoCraft">
+          <!-- Honeypot Formspree -->
           <div class="hp-trap" aria-hidden="true">
-            <input type="text" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
           </div>
           <div class="form-row">
             <div class="form-group">

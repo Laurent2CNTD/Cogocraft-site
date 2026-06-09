@@ -100,11 +100,17 @@ if (contactForm) {
     formStatus.textContent = '';
 
     try {
-      const res  = await fetch('contact.php', { method: 'POST', body: new FormData(contactForm) });
+      const res  = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
       const data = await res.json();
-      formStatus.className = 'form-status ' + (data.success ? 'success' : 'error');
-      formStatus.textContent = data.message;
-      if (data.success) contactForm.reset();
+      formStatus.className = 'form-status ' + (res.ok ? 'success' : 'error');
+      formStatus.textContent = res.ok
+        ? 'Message envoyé. Je vous réponds sous 24h.'
+        : (data.errors ? data.errors[0].message : "Erreur lors de l'envoi. Appelez directement au 06 15 61 49 38.");
+      if (res.ok) contactForm.reset();
     } catch {
       formStatus.className = 'form-status error';
       formStatus.textContent = 'Erreur réseau. Appelez directement au 06 15 61 49 38.';
