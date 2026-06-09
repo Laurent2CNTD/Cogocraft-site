@@ -86,6 +86,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// CONTACT FORM — envoi AJAX
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn  = document.getElementById('formSubmit');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    try {
+      const res  = await fetch('contact.php', { method: 'POST', body: new FormData(contactForm) });
+      const data = await res.json();
+      formStatus.className = 'form-status ' + (data.success ? 'success' : 'error');
+      formStatus.textContent = data.message;
+      if (data.success) contactForm.reset();
+    } catch {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = 'Erreur réseau. Appelez directement au 06 15 61 49 38.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer la demande';
+    }
+  });
+}
+
 // NAV ACTIVE PAGE
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {

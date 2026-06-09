@@ -4,7 +4,13 @@
 // Fichier : /var/www/cogocraft/webhook.php
 // =============================================
 
-define('SECRET', getenv('WEBHOOK_SECRET') ?: 'CHANGE_MOI_SECRET');
+$_secret = getenv('WEBHOOK_SECRET');
+if (empty($_secret)) {
+    http_response_code(500);
+    error_log('[cogocraft] ERREUR : variable WEBHOOK_SECRET non définie');
+    exit('Configuration error');
+}
+define('SECRET', $_secret);
 define('DEPLOY_SCRIPT', '/var/www/cogocraft/deploy.sh');
 define('LOG_FILE', '/var/log/cogocraft-deploy.log');
 

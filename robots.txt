@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /webhook.php
+Disallow: /deploy.sh
+Disallow: /README.md
+
+Sitemap: https://cogocraft.com/sitemap.xml
